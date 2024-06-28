@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Запити</title>
+  </head>
+  <body>
+    <script>
+      const currentYear = 2024;
+
+      let userName = prompt("Введіть ваше ім'я:");
+      alert(`Привіт, ${userName}!`);
+
+      let birthYear = prompt("Введіть рік вашого народження:");
+      let age = currentYear - birthYear;
+      alert(`Вам ${age} років.`);
+
+      let sideLength = prompt(
+        "Введіть довжину сторони квадрата в сантиметрах:"
+      );
+      let perimeter = 4 * sideLength;
+      alert(`Периметр квадрата дорівнює ${perimeter} см.`);
+
+      const PI = 3.14159;
+      let radius = prompt("Введіть радіус кола в сантиметрах:");
+      let area = PI * radius * radius;
+      alert(`Площа кола дорівнює ${area} кв. см.`);
+
+      let distance = prompt("Введіть відстань між містами у кілометрах:");
+      let time = prompt("Введіть час, за який ви хочете дістатися у годинах:");
+      let speed = distance / time;
+      alert(`Вам потрібно рухатися зі швидкістю ${speed} км/год.`);
+
+      const exchangeRate = 0.85;
+      let dollars = prompt("Введіть суму в доларах для конвертації:");
+      let euros = dollars * exchangeRate;
+      alert(`${dollars} доларів дорівнює ${euros} євро.`);
+
+      const flashDriveCapacity = prompt("Введіть обсяг флешки в Гб:");
+      const fileSizeMB = 820;
+      let filesCount = Math.floor((flashDriveCapacity * 1024) / fileSizeMB);
+      alert(
+        `На флешці об'ємом ${flashDriveCapacity} Гб поміщається ${filesCount} файлів розміром ${fileSizeMB} Мб.`
+      );
+    </script>
+  </body>
+</html>
