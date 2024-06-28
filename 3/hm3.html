@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript класи для CSS та кнопок</title>
+  </head>
+  <body>
+    <h1>JavaScript класи для CSS та кнопок</h1>
+
+    <script>
+      class Selector {
+        constructor(name) {
+          this.name = name;
+          this.styles = {};
+        }
+
+        addProperty(name, value) {
+          this.styles[name] = value;
+        }
+
+        removeProperty(name) {
+          if (this.styles.hasOwnProperty(name)) {
+            delete this.styles[name];
+          }
+        }
+
+        getCSS() {
+          let cssString = `.${this.name} {`;
+          for (let property in this.styles) {
+            if (this.styles.hasOwnProperty(property)) {
+              cssString += ` ${property}: ${this.styles[property]};`;
+            }
+          }
+          cssString += ` }`;
+          return cssString;
+        }
+      }
+
+      let mySelector = new Selector("my-class");
+      mySelector.addProperty("color", "blue");
+      mySelector.addProperty("font-size", "16px");
+      console.log(mySelector.getCSS());
+
+      class Button {
+        constructor(width, height, text) {
+          this.width = width;
+          this.height = height;
+          this.text = text;
+        }
+
+        showBtn() {
+          document.write(
+            `<button style="width: ${this.width}px; height: ${this.height}px;">${this.text}</button>`
+          );
+        }
+      }
+
+      let myButton = new Button(120, 40, "Click me");
+      myButton.showBtn();
+
+      class BootstrapButton extends Button {
+        constructor(width, height, text, color) {
+          super(width, height, text);
+          this.color = color;
+        }
+
+        showBtn() {
+          document.write(
+            `<button style="width: ${this.width}px; height: ${this.height}px; background-color: ${this.color};">${this.text}</button>`
+          );
+        }
+      }
+
+      let myBootstrapButton = new BootstrapButton(150, 50, "Submit", "green");
+      myBootstrapButton.showBtn();
+    </script>
+  </body>
+</html>
