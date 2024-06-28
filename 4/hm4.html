@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Blocks and Traffic Light</title>
+    <style>
+      .color-palette {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+      }
+      .color-block {
+        width: 50px;
+        height: 50px;
+        margin: 2px;
+        cursor: pointer;
+      }
+      .add-button {
+        display: block;
+        margin-top: 10px;
+      }
+      #trafficLight {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .light {
+        width: 50px;
+        height: 50px;
+        display: inline-block;
+        border-radius: 50%;
+        margin: 5px;
+      }
+      .next-button {
+        display: block;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="color-palette" id="colorPalette">
+      <div class="color-block" style="background-color: #f94144"></div>
+      <div class="color-block" style="background-color: #f3722c"></div>
+      <div class="color-block" style="background-color: #f8961e"></div>
+      <div class="color-block" style="background-color: #f9844a"></div>
+      <div class="color-block" style="background-color: #f9c74f"></div>
+      <div class="color-block" style="background-color: #90be6d"></div>
+      <div class="color-block" style="background-color: #43aa8b"></div>
+      <div class="color-block" style="background-color: #577590"></div>
+      <div class="color-block" style="background-color: #4d908e"></div>
+      <div class="color-block" style="background-color: #277da1"></div>
+    </div>
+    <button class="add-button" onclick="addBlock()">Add block</button>
+
+    <div id="trafficLight">
+      <div class="light" id="light1" style="background-color: grey"></div>
+      <div class="light" id="light2" style="background-color: grey"></div>
+      <div class="light" id="light3" style="background-color: grey"></div>
+    </div>
+    <button class="next-button" onclick="changeLight()">NEXT</button>
+
+    <script src="script4.js"></script>
+  </body>
+</html>
