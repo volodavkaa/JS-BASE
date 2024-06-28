@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Робота з рядками в JavaScript</title>
+  </head>
+  <body>
+    <h1>Робота з рядками в JavaScript</h1>
+
+    <script>
+      // Завдання 1: Підрахунок пробілів у рядку
+      function countSpaces(str) {
+        let count = 0;
+        for (let i = 0; i < str.length; i++) {
+          if (str[i] === " ") {
+            count++;
+          }
+        }
+        return count;
+      }
+
+      // Завдання 2: Перше слово у верхньому регістрі
+      function capitalizeFirstLetter(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+      }
+
+      // Завдання 3: Підрахунок слів у рядку
+      function countWords(str) {
+        str = str.trim();
+        let words = str.split(/\s+/);
+        return words.length;
+      }
+
+      // Завдання 4: Перетворення словосполучення у абревіатуру
+      function acronymize(phrase) {
+        let words = phrase.split(" ");
+        let acronym = words
+          .map((word) => word.charAt(0).toUpperCase())
+          .join("");
+        return acronym;
+      }
+
+      // Завдання 5: Перевірка на паліндром
+      function isPalindrome(str) {
+        str = str.toLowerCase().replace(/[\W_]/g, "");
+        let reversed = str.split("").reverse().join("");
+        return str === reversed;
+      }
+
+      // Приклади використання функцій
+      let text1 = "Це речення має кілька пробілів.";
+      console.log(`Кількість пробілів у тексті: ${countSpaces(text1)}`);
+
+      let word = "javascript";
+      console.log(
+        `Слово з першою великою літерою: ${capitalizeFirstLetter(word)}`
+      );
+
+      let sentence = "Цей рядок має кілька слів.";
+      console.log(`Кількість слів у реченні: ${countWords(sentence)}`);
+
+      let phrase = "об'єктно орієнтоване програмування";
+      console.log(`Абревіатура для "${phrase}": ${acronymize(phrase)}`);
+
+      let text2 = "А роза упала на лапу Азора";
+      console.log(`"${text2}" є паліндромом: ${isPalindrome(text2)}`);
+    </script>
+  </body>
+</html>
